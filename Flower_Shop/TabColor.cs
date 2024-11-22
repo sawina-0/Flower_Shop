@@ -164,6 +164,7 @@ namespace Flower_Shop
                     var ChangeQuery = $"update Flower_Color set Color = '{Color}' where ID_Color = '{Id}'";
                     var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
                     command.ExecuteNonQuery();
+
                 }
             }
             dB.closeConnection();
