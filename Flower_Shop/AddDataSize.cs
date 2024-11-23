@@ -38,7 +38,6 @@ namespace Flower_Shop
                 var command = new SqlCommand(AddQuery, dB.GetSqlConnection());
                 command.ExecuteNonQuery();
                 MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             dB.closeConnection();
         }

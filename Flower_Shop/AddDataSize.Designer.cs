@@ -50,7 +50,7 @@
             this.BTSaveData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(221)))), ((int)(((byte)(127)))));
             this.BTSaveData.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BTSaveData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.BTSaveData.Location = new System.Drawing.Point(237, 193);
+            this.BTSaveData.Location = new System.Drawing.Point(239, 194);
             this.BTSaveData.Name = "BTSaveData";
             this.BTSaveData.Size = new System.Drawing.Size(126, 40);
             this.BTSaveData.TabIndex = 7;
