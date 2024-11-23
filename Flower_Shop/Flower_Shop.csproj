@@ -64,6 +64,18 @@
     <Compile Include="AddDataSize.Designer.cs">
       <DependentUpon>AddDataSize.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDataStorehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDataStorehouse.Designer.cs">
+      <DependentUpon>AddDataStorehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDataSup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDataSup.Designer.cs">
+      <DependentUpon>AddDataSup.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDataType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddDataSize.resx">
       <DependentUpon>AddDataSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDataStorehouse.resx">
+      <DependentUpon>AddDataStorehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDataSup.resx">
+      <DependentUpon>AddDataSup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDataType.resx">
       <DependentUpon>AddDataType.cs</DependentUpon>
