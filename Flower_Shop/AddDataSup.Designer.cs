@@ -40,7 +40,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(124, 118);
+            this.label1.Location = new System.Drawing.Point(169, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 32);
             this.label1.TabIndex = 8;
@@ -53,7 +53,7 @@
             this.BTSaveData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(221)))), ((int)(((byte)(127)))));
             this.BTSaveData.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BTSaveData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.BTSaveData.Location = new System.Drawing.Point(326, 235);
+            this.BTSaveData.Location = new System.Drawing.Point(371, 252);
             this.BTSaveData.Name = "BTSaveData";
             this.BTSaveData.Size = new System.Drawing.Size(126, 40);
             this.BTSaveData.TabIndex = 7;
@@ -65,7 +65,7 @@
             // 
             this.TBAddComName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBAddComName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TBAddComName.Location = new System.Drawing.Point(353, 118);
+            this.TBAddComName.Location = new System.Drawing.Point(398, 135);
             this.TBAddComName.Name = "TBAddComName";
             this.TBAddComName.Size = new System.Drawing.Size(165, 35);
             this.TBAddComName.TabIndex = 6;
@@ -75,7 +75,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(167, 178);
+            this.label2.Location = new System.Drawing.Point(212, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 32);
             this.label2.TabIndex = 9;
@@ -86,7 +86,7 @@
             // 
             this.TBAddCountry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TBAddCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TBAddCountry.Location = new System.Drawing.Point(353, 178);
+            this.TBAddCountry.Location = new System.Drawing.Point(398, 195);
             this.TBAddCountry.Name = "TBAddCountry";
             this.TBAddCountry.Size = new System.Drawing.Size(165, 35);
             this.TBAddCountry.TabIndex = 10;
@@ -104,7 +104,6 @@
             this.Controls.Add(this.TBAddComName);
             this.Name = "AddDataSup";
             this.Text = "AddDataSup";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
