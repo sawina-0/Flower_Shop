@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDataSup));
             this.label1 = new System.Windows.Forms.Label();
             this.BTSaveData = new System.Windows.Forms.Button();
             this.TBAddComName = new System.Windows.Forms.TextBox();
@@ -102,6 +103,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTSaveData);
             this.Controls.Add(this.TBAddComName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDataSup";
             this.Text = "AddDataSup";
             this.ResumeLayout(false);

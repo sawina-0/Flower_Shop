@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDataSize));
             this.label1 = new System.Windows.Forms.Label();
             this.BTSaveData = new System.Windows.Forms.Button();
             this.TBAddSize = new System.Windows.Forms.TextBox();
@@ -76,6 +77,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTSaveData);
             this.Controls.Add(this.TBAddSize);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDataSize";
             this.Text = "AddDataSize";
             this.ResumeLayout(false);

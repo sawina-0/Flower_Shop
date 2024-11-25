@@ -1,6 +1,6 @@
 ﻿namespace Flower_Shop
 {
-    partial class AddDataStorehouse
+    partial class AddDataSalePoints
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDataStorehouse));
-            this.TBAddAddr = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDataSalePoints));
+            this.TBAddStorehouse = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TBAddShopAddr = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.BTSaveData = new System.Windows.Forms.Button();
-            this.TBAddStName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // TBAddAddr
+            // TBAddStorehouse
             // 
-            this.TBAddAddr.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBAddAddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TBAddAddr.Location = new System.Drawing.Point(403, 187);
-            this.TBAddAddr.Name = "TBAddAddr";
-            this.TBAddAddr.Size = new System.Drawing.Size(165, 35);
-            this.TBAddAddr.TabIndex = 15;
+            this.TBAddStorehouse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBAddStorehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TBAddStorehouse.Location = new System.Drawing.Point(319, 210);
+            this.TBAddStorehouse.Name = "TBAddStorehouse";
+            this.TBAddStorehouse.Size = new System.Drawing.Size(165, 35);
+            this.TBAddStorehouse.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(86, 213);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(214, 32);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Storehouse name:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // TBAddShopAddr
+            // 
+            this.TBAddShopAddr.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TBAddShopAddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TBAddShopAddr.Location = new System.Drawing.Point(319, 153);
+            this.TBAddShopAddr.Name = "TBAddShopAddr";
+            this.TBAddShopAddr.Size = new System.Drawing.Size(165, 35);
+            this.TBAddShopAddr.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(217, 187);
+            this.label2.Location = new System.Drawing.Point(133, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 32);
-            this.label2.TabIndex = 14;
+            this.label2.TabIndex = 21;
             this.label2.Text = "Address:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(167, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 32);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Storehouse name:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BTSaveData
             // 
@@ -75,37 +84,28 @@
             this.BTSaveData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(221)))), ((int)(((byte)(127)))));
             this.BTSaveData.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BTSaveData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(132)))), ((int)(((byte)(64)))));
-            this.BTSaveData.Location = new System.Drawing.Point(376, 244);
+            this.BTSaveData.Location = new System.Drawing.Point(281, 271);
             this.BTSaveData.Name = "BTSaveData";
             this.BTSaveData.Size = new System.Drawing.Size(126, 40);
-            this.BTSaveData.TabIndex = 12;
+            this.BTSaveData.TabIndex = 19;
             this.BTSaveData.Text = "Save";
             this.BTSaveData.UseVisualStyleBackColor = false;
             this.BTSaveData.Click += new System.EventHandler(this.BTSaveData_Click);
             // 
-            // TBAddStName
-            // 
-            this.TBAddStName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TBAddStName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TBAddStName.Location = new System.Drawing.Point(403, 127);
-            this.TBAddStName.Name = "TBAddStName";
-            this.TBAddStName.Size = new System.Drawing.Size(165, 35);
-            this.TBAddStName.TabIndex = 11;
-            // 
-            // AddDataStorehouse
+            // AddDataSalePoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TBAddAddr);
+            this.ClientSize = new System.Drawing.Size(625, 461);
+            this.Controls.Add(this.TBAddStorehouse);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TBAddShopAddr);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTSaveData);
-            this.Controls.Add(this.TBAddStName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddDataStorehouse";
-            this.Text = "AddDataStorehouse";
+            this.Name = "AddDataSalePoints";
+            this.Text = "AddDataSalePoints";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,10 +113,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox TBAddAddr;
+        private System.Windows.Forms.TextBox TBAddStorehouse;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TBAddShopAddr;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BTSaveData;
-        private System.Windows.Forms.TextBox TBAddStName;
     }
 }

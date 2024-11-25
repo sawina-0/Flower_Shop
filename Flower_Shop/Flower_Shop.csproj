@@ -58,6 +58,12 @@
     <Compile Include="AddDataRole.Designer.cs">
       <DependentUpon>AddDataRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDataSalePoints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDataSalePoints.Designer.cs">
+      <DependentUpon>AddDataSalePoints.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDataSize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddDataRole.resx">
       <DependentUpon>AddDataRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDataSalePoints.resx">
+      <DependentUpon>AddDataSalePoints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDataSize.resx">
       <DependentUpon>AddDataSize.cs</DependentUpon>
