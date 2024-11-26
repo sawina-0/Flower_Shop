@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Xml.Linq;
 
 namespace Flower_Shop
 {
@@ -161,9 +162,22 @@ namespace Flower_Shop
                     var Id = dataGridViewColors.Rows[index].Cells[0].Value.ToString();
                     var Color = dataGridViewColors.Rows[index].Cells[1].Value.ToString();
 
-                    var ChangeQuery = $"update Flower_Color set Color = '{Color}' where ID_Color = '{Id}'";
-                    var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
-                    command.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand("select * from Flower_Color where Color='" + Color + "' and ID_Color != '" + Id + "'", dB.GetSqlConnection());
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        MessageBox.Show("Color already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        dr.Close();
+                        var ChangeQuery = $"update Flower_Color set Color = '{Color}' where ID_Color = '{Id}'";
+                        var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
+                        command.ExecuteNonQuery();
+                    }
+
+                    
 
                 }
             }

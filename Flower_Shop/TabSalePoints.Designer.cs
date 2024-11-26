@@ -77,6 +77,7 @@
             this.CBFilter.Name = "CBFilter";
             this.CBFilter.Size = new System.Drawing.Size(167, 28);
             this.CBFilter.TabIndex = 37;
+            this.CBFilter.SelectedIndexChanged += new System.EventHandler(this.CBFilter_SelectedIndexChanged);
             // 
             // BTSortDesc
             // 
@@ -91,6 +92,7 @@
             this.BTSortDesc.TabIndex = 36;
             this.BTSortDesc.Text = "Sort Desc";
             this.BTSortDesc.UseVisualStyleBackColor = false;
+            this.BTSortDesc.Click += new System.EventHandler(this.BTSortDesc_Click);
             // 
             // BTSortAsc
             // 
@@ -105,6 +107,7 @@
             this.BTSortAsc.TabIndex = 35;
             this.BTSortAsc.Text = "Sort Asc";
             this.BTSortAsc.UseVisualStyleBackColor = false;
+            this.BTSortAsc.Click += new System.EventHandler(this.BTSortAsc_Click);
             // 
             // BTClear
             // 
@@ -119,6 +122,7 @@
             this.BTClear.TabIndex = 34;
             this.BTClear.Text = "Clear";
             this.BTClear.UseVisualStyleBackColor = false;
+            this.BTClear.Click += new System.EventHandler(this.BTClear_Click);
             // 
             // BTUpdate
             // 
@@ -133,6 +137,7 @@
             this.BTUpdate.TabIndex = 33;
             this.BTUpdate.Text = "Update";
             this.BTUpdate.UseVisualStyleBackColor = false;
+            this.BTUpdate.Click += new System.EventHandler(this.BTUpdate_Click);
             // 
             // groupBox2
             // 
@@ -164,7 +169,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(77, 175);
+            this.label4.Location = new System.Drawing.Point(77, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(211, 32);
             this.label4.TabIndex = 11;
@@ -233,6 +238,7 @@
             this.BTSaveData.TabIndex = 3;
             this.BTSaveData.Text = "Save";
             this.BTSaveData.UseVisualStyleBackColor = false;
+            this.BTSaveData.Click += new System.EventHandler(this.BTSaveData_Click);
             // 
             // BTModify
             // 
@@ -245,6 +251,7 @@
             this.BTModify.TabIndex = 2;
             this.BTModify.Text = "Modify";
             this.BTModify.UseVisualStyleBackColor = false;
+            this.BTModify.Click += new System.EventHandler(this.BTModify_Click);
             // 
             // BTDeleteData
             // 
@@ -257,6 +264,7 @@
             this.BTDeleteData.TabIndex = 1;
             this.BTDeleteData.Text = "Delete";
             this.BTDeleteData.UseVisualStyleBackColor = false;
+            this.BTDeleteData.Click += new System.EventHandler(this.BTDeleteData_Click);
             // 
             // BTAddData
             // 
@@ -269,6 +277,7 @@
             this.BTAddData.TabIndex = 0;
             this.BTAddData.Text = "New data";
             this.BTAddData.UseVisualStyleBackColor = false;
+            this.BTAddData.Click += new System.EventHandler(this.BTAddData_Click);
             // 
             // TBSearch
             // 
@@ -278,6 +287,7 @@
             this.TBSearch.Name = "TBSearch";
             this.TBSearch.Size = new System.Drawing.Size(238, 29);
             this.TBSearch.TabIndex = 30;
+            this.TBSearch.TextChanged += new System.EventHandler(this.TBSearch_TextChanged);
             // 
             // dataGridViewShop
             // 
@@ -292,6 +302,7 @@
             this.dataGridViewShop.ReadOnly = true;
             this.dataGridViewShop.Size = new System.Drawing.Size(675, 282);
             this.dataGridViewShop.TabIndex = 29;
+            this.dataGridViewShop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShop_CellClick);
             // 
             // TabSalePoints
             // 
@@ -312,6 +323,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TabSalePoints";
             this.Text = "TabSalePoints";
+            this.Load += new System.EventHandler(this.TabSalePoints_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

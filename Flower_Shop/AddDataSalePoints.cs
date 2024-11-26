@@ -41,7 +41,7 @@ namespace Flower_Shop
                 if (read.Read())
                 {
                     read.Close();
-                    var AddQuery1 = $"insert into Sale_Points (Shop_Address, ID_Storehouse) values ('{AddAddr}', (select ID_Storehouse from Storehouse where Storehouse_Name = '{AddStorehouse}'))";
+                    var AddQuery1 = $"insert into Sale_Point (Shop_Address, ID_Storehouse) values ('{AddAddr}', (select ID_Storehouse from Storehouse where Storehouse_Name = '{AddStorehouse}'))";
                     var command = new SqlCommand(AddQuery1, dB.GetSqlConnection());
                     command.ExecuteNonQuery();
 
@@ -58,5 +58,5 @@ namespace Flower_Shop
             dB.closeConnection();
         }
     }
-    }
 }
+

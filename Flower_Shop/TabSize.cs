@@ -147,9 +147,22 @@ namespace Flower_Shop
                     var Id = dataGridViewSize.Rows[index].Cells[0].Value.ToString();
                     var Size = dataGridViewSize.Rows[index].Cells[1].Value.ToString();
 
-                    var ChangeQuery = $"update Blossom_Size set Size = '{Size}' where ID_Size = '{Id}'";
-                    var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
-                    command.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand("select * from Blossom_Size where Size ='" + Size + "' and ID_Size != '" + Id + "'", dB.GetSqlConnection());
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        MessageBox.Show("Size already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        dr.Close();
+                        var ChangeQuery = $"update Blossom_Size set Size = '{Size}' where ID_Size = '{Id}'";
+                        var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
+                        command.ExecuteNonQuery();
+                    }
+
+                    
                 }
             }
             dB.closeConnection();

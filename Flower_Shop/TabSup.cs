@@ -167,9 +167,22 @@ namespace Flower_Shop
                     var ComName = dataGridViewSup.Rows[index].Cells[1].Value.ToString();
                     var Country =dataGridViewSup.Rows[index].Cells[2].Value.ToString();
 
-                    var ChangeQuery = $"update Supplier set Company_Name = '{ComName}', Country = '{Country}' where ID_Supplier = '{Id}'";
-                    var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
-                    command.ExecuteNonQuery();
+                    SqlCommand cmd = new SqlCommand("select * from Supplier where Company_Name='" + ComName + "' and ID_Supplier != '" + Id + "'", dB.GetSqlConnection());
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        dr.Close();
+                        MessageBox.Show("Company already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        dr.Close();
+                        var ChangeQuery = $"update Supplier set Company_Name = '{ComName}', Country = '{Country}' where ID_Supplier = '{Id}'";
+                        var command = new SqlCommand(ChangeQuery, dB.GetSqlConnection());
+                        command.ExecuteNonQuery();
+                    }
+
+                    
 
                 }
             }
