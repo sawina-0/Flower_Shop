@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,19 +27,29 @@ namespace Flower_Shop
             var AddSize = TBAddSize.Text;
             SqlCommand cmd = new SqlCommand("select * from Blossom_Size where Size='" + TBAddSize.Text + "'", dB.GetSqlConnection());
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (TBAddSize.Text != string.Empty)
             {
-                dr.Close();
-                MessageBox.Show("Size already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dr.Read())
+                {
+                    dr.Close();
+                    MessageBox.Show("Size already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dr.Close();
+                    var AddQuery = $"insert into Blossom_size (Size) values ('{AddSize}')";
+                    var command = new SqlCommand(AddQuery, dB.GetSqlConnection());
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
             else
             {
                 dr.Close();
-                var AddQuery = $"insert into Blossom_size (Size) values ('{AddSize}')";
-                var command = new SqlCommand(AddQuery, dB.GetSqlConnection());
-                command.ExecuteNonQuery();
-                MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("enter the value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             dB.closeConnection();
         }
     }

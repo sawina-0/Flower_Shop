@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.AccessControl;
 
 
 namespace Flower_Shop
@@ -28,32 +29,41 @@ namespace Flower_Shop
             var AddStorehouse = TBAddStorehouse.Text;
             SqlCommand cmd = new SqlCommand("select * from Sale_Point where Shop_Address ='" + TBAddShopAddr.Text + "'", dB.GetSqlConnection());
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (TBAddShopAddr.Text != string.Empty && TBAddStorehouse.Text != string.Empty)
             {
-                dr.Close();
-                MessageBox.Show("Address already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dr.Read())
+                {
+                    dr.Close();
+                    MessageBox.Show("Address already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dr.Close();
+                    SqlCommand com = new SqlCommand("select * from Storehouse where Storehouse_Name ='" + TBAddStorehouse.Text + "'", dB.GetSqlConnection());
+                    SqlDataReader read = com.ExecuteReader();
+                    if (read.Read())
+                    {
+                        read.Close();
+                        var AddQuery1 = $"insert into Sale_Point (Shop_Address, ID_Storehouse) values ('{AddAddr}', (select ID_Storehouse from Storehouse where Storehouse_Name = '{AddStorehouse}'))";
+                        var command = new SqlCommand(AddQuery1, dB.GetSqlConnection());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        read.Close();
+                        MessageBox.Show("there is no such storehouse in the database, add it first to use in the future", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+
+                }
+                
             }
             else
             {
                 dr.Close();
-                SqlCommand com = new SqlCommand("select * from Storehouse where Storehouse_Name ='" + TBAddStorehouse.Text + "'", dB.GetSqlConnection());
-                SqlDataReader read = com.ExecuteReader();
-                if (read.Read())
-                {
-                    read.Close();
-                    var AddQuery1 = $"insert into Sale_Point (Shop_Address, ID_Storehouse) values ('{AddAddr}', (select ID_Storehouse from Storehouse where Storehouse_Name = '{AddStorehouse}'))";
-                    var command = new SqlCommand(AddQuery1, dB.GetSqlConnection());
-                    command.ExecuteNonQuery();
-
-                    MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    read.Close();
-                    MessageBox.Show("there is no such storehouse in the database, add it first to use in the future", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
-                }
-
+                MessageBox.Show("enter the value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dB.closeConnection();
         }

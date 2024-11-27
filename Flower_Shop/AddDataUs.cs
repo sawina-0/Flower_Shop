@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.AccessControl;
 
 namespace Flower_Shop
 {
@@ -28,43 +29,52 @@ namespace Flower_Shop
             var AddRole = TBAddRole.Text;
             SqlCommand cmd = new SqlCommand("select * from System_Users where Login='" + TBAddLog.Text + "'", dB.GetSqlConnection());
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (TBAddLog.Text != string.Empty && TBAddPswd.Text != string.Empty && TBAddRole.Text != string.Empty)
             {
-                dr.Close();
-                MessageBox.Show("Login already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dr.Read())
+                {
+                    dr.Close();
+                    MessageBox.Show("Login already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dr.Close();
+                    SqlCommand com = new SqlCommand("select * from Role where Role_Name='" + TBAddRole.Text + "'", dB.GetSqlConnection());
+                    SqlDataReader read = com.ExecuteReader();
+                    if (read.Read())
+                    {
+                        read.Close();
+                        var AddQuery1 = $"insert into System_Users (Login, Password, ID_Role) values ('{AddLog}','{AddPswd}', (select ID_Role from Role where Role_Name = '{AddRole}'))";
+                        var command = new SqlCommand(AddQuery1, dB.GetSqlConnection());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        read.Close();
+                        if (MessageBox.Show("this role does not exist in the database, adding data will create a new role", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                        {
+                            var AddQuery2 = $"insert into Role (Role_Name) values ('{AddRole}')";
+                            var SqlCom = new SqlCommand(AddQuery2, dB.GetSqlConnection());
+                            SqlCom.ExecuteNonQuery();
+                            var AddQuery3 = $"insert into System_Users(Login, Password, ID_Role) values ('{AddLog}','{AddPswd}',(select ID_Role from Role where Role_Name='{AddRole}')";
+                            var SqlCmd = new SqlCommand(AddQuery3, dB.GetSqlConnection());
+                            SqlCmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
+
+                }
             }
             else
             {
                 dr.Close();
-                SqlCommand com = new SqlCommand("select * from Role where Role_Name='" + TBAddRole.Text + "'", dB.GetSqlConnection());
-                SqlDataReader read = com.ExecuteReader();
-                if (read.Read())
-                {
-                    read.Close();
-                    var AddQuery1 = $"insert into System_Users (Login, Password, ID_Role) values ('{AddLog}','{AddPswd}', (select ID_Role from Role where Role_Name = '{AddRole}'))";
-                    var command = new SqlCommand(AddQuery1, dB.GetSqlConnection());
-                    command.ExecuteNonQuery();
-
-                    MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else 
-                {
-                    read.Close();
-                    if (MessageBox.Show("this role does not exist in the database, adding data will create a new role", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-                    {
-                        var AddQuery2 = $"insert into Role (Role_Name) values ('{AddRole}')";
-                        var SqlCom = new SqlCommand(AddQuery2, dB.GetSqlConnection());
-                        SqlCom.ExecuteNonQuery();
-                        var AddQuery3 = $"insert into System_Users(Login, Password, ID_Role) values ('{AddLog}','{AddPswd}',(select ID_Role from Role where Role_Name='{AddRole}')";
-                        var SqlCmd = new SqlCommand(AddQuery3, dB.GetSqlConnection());
-                        SqlCmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    
-                }
-
+                MessageBox.Show("enter the value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             dB.closeConnection();
         }
     }

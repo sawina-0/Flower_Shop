@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.AccessControl;
 
 namespace Flower_Shop
 {
@@ -27,20 +28,29 @@ namespace Flower_Shop
             var AddAddress = TBAddAddr.Text;
             SqlCommand cmd = new SqlCommand("select * from Storehouse where Storehouse_Name='" + TBAddStName.Text + "' or Storehouse_Address = '" + TBAddAddr.Text + "'", dB.GetSqlConnection());
             SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            if (TBAddStName.Text != string.Empty && TBAddAddr.Text != string.Empty)
             {
-                dr.Close();
-                MessageBox.Show("Storehouse name or address already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (dr.Read())
+                {
+                    dr.Close();
+                    MessageBox.Show("Storehouse name or address already exist  ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    dr.Close();
+                    var AddQuery = $"insert into Storehouse (Storehouse_Name, Storehouse_Address) values ('{AddStName}','{AddAddress}')";
+                    var command = new SqlCommand(AddQuery, dB.GetSqlConnection());
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
             }
             else
             {
                 dr.Close();
-                var AddQuery = $"insert into Storehouse (Storehouse_Name, Storehouse_Address) values ('{AddStName}','{AddAddress}')";
-                var command = new SqlCommand(AddQuery, dB.GetSqlConnection());
-                command.ExecuteNonQuery();
-                MessageBox.Show("Data is add", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("enter the value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             dB.closeConnection();
         }
     }

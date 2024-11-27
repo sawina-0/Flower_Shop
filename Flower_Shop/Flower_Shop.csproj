@@ -52,6 +52,12 @@
     <Compile Include="AddDataColor.Designer.cs">
       <DependentUpon>AddDataColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDataFlower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDataFlower.Designer.cs">
+      <DependentUpon>AddDataFlower.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDataRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddDataColor.resx">
       <DependentUpon>AddDataColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDataFlower.resx">
+      <DependentUpon>AddDataFlower.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddDataRole.resx">
       <DependentUpon>AddDataRole.cs</DependentUpon>
