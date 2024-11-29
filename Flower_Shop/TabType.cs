@@ -173,7 +173,7 @@ namespace Flower_Shop
             var SelectedRowIndex = dataGridViewType.CurrentCell.RowIndex;
             var Id = TBIDType.Text;
             var Type = TBType.Text;
-            if (dataGridViewType.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            if (TBIDType.Text != string.Empty && TBType.Text != string.Empty)
             {
                 dataGridViewType.Rows[SelectedRowIndex].SetValues(Id, Type);
                 dataGridViewType.Rows[SelectedRowIndex].Cells[2].Value = RowState.Modified;

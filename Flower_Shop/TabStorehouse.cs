@@ -194,11 +194,11 @@ namespace Flower_Shop
         {
             var SelectedRowIndex = dataGridViewStore.CurrentCell.RowIndex;
             var Id = TBIDStore.Text;
-            var ComName = TBStoreName.Text;
-            var Country = TBStoreAddr.Text;
-            if (dataGridViewStore.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            var StName = TBStoreName.Text;
+            var StAddr = TBStoreAddr.Text;
+            if (TBIDStore.Text != string.Empty && TBStoreName.Text != string.Empty && TBStoreAddr.Text != string.Empty)
             {
-                dataGridViewStore.Rows[SelectedRowIndex].SetValues(Id, ComName, Country);
+                dataGridViewStore.Rows[SelectedRowIndex].SetValues(Id, StName, StAddr);
                 dataGridViewStore.Rows[SelectedRowIndex].Cells[3].Value = RowState.Modified;
             }
         }

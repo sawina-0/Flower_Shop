@@ -186,7 +186,7 @@ namespace Flower_Shop
             var SelectedRowIndex = dataGridViewRole.CurrentCell.RowIndex;
             var Id = TBIDRole.Text;
             var Role = TBRole.Text;
-            if (dataGridViewRole.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            if (TBIDRole.Text != string.Empty && TBRole.Text != string.Empty)
             {
                 dataGridViewRole.Rows[SelectedRowIndex].SetValues(Id, Role);
                 dataGridViewRole.Rows[SelectedRowIndex].Cells[2].Value = RowState.Modified;

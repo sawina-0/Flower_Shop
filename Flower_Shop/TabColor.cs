@@ -204,10 +204,14 @@ namespace Flower_Shop
             var SelectedRowIndex = dataGridViewColors.CurrentCell.RowIndex;
             var Id = TBIDColor.Text;
             var Color = TBColor.Text;
-            if (dataGridViewColors.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            if (TBIDColor.Text != string.Empty && TBColor.Text !=  string.Empty)
             {
                 dataGridViewColors.Rows[SelectedRowIndex].SetValues(Id, Color);
                 dataGridViewColors.Rows[SelectedRowIndex ].Cells[2].Value = RowState.Modified;
+            }
+            else
+            {
+
             }
         }
 

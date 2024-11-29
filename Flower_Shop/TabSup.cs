@@ -208,7 +208,7 @@ namespace Flower_Shop
             var Id = TBIDSup.Text;
             var ComName = TBComName.Text;
             var Country = TBCountry.Text;
-            if (dataGridViewSup.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            if (TBIDSup.Text != string.Empty && TBComName.Text != string.Empty && TBCountry.Text != string.Empty)
             {
                 dataGridViewSup.Rows[SelectedRowIndex].SetValues(Id, ComName, Country);
                 dataGridViewSup.Rows[SelectedRowIndex].Cells[3].Value = RowState.Modified;

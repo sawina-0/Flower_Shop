@@ -224,7 +224,7 @@ namespace Flower_Shop
             var Login = TBLogUs.Text;
             var Pswd = TBPasswdUs.Text;
             var Role = TBRole.Text;
-            if (dataGridViewUs.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            if (TBIDUs.Text != string.Empty && TBLogUs.Text != string.Empty && TBPasswdUs.Text != string.Empty && TBRole.Text != string.Empty)
             {
                 dataGridViewUs.Rows[SelectedRowIndex].SetValues(Id, Login, Pswd, Role);
                 dataGridViewUs.Rows[SelectedRowIndex].Cells[4].Value = RowState.Modified;

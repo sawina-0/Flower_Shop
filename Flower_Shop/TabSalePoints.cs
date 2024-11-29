@@ -218,7 +218,7 @@ namespace Flower_Shop
             var Id = TBIDSP.Text;
             var SPAddr = TBSPAddr.Text;
             var SHName = TBSHName.Text;
-            if (dataGridViewShop.Rows[SelectedRowIndex].Cells[0].Value.ToString() != string.Empty)
+            if (TBIDSP.Text != string.Empty && TBSPAddr.Text != string.Empty && TBSHName.Text != string.Empty)
             {
                 dataGridViewShop.Rows[SelectedRowIndex].SetValues(Id, SPAddr, SHName);
                 dataGridViewShop.Rows[SelectedRowIndex].Cells[3].Value = RowState.Modified;
