@@ -30,7 +30,7 @@ namespace Flower_Shop
             int AddPrice;
             if (TBAddColor.Text != string.Empty && TBAddSize.Text != string.Empty && TBAddType.Text != string.Empty && TBAddSup.Text != string.Empty && TBAddPrice.Text != string.Empty)
             {
-                if (int.TryParse(TBAddPrice.Text, out AddPrice))
+                if ((int.TryParse(TBAddPrice.Text, out AddPrice)) && AddPrice>0)
                 {
                     SqlCommand com = new SqlCommand("select * from Flower_Color where Color ='" + TBAddColor.Text + "'", dB.GetSqlConnection());
                     SqlDataReader ColorChecker = com.ExecuteReader();

@@ -308,14 +308,14 @@ namespace Flower_Shop
             int Price;
             if (TBIDFl.Text != string.Empty && TBColor.Text != string.Empty && TBSize.Text != string.Empty && TBName.Text != string.Empty && TBCountry.Text != string.Empty && TBPrice.Text != string.Empty)
             {
-                if(int.TryParse(TBPrice.Text, out Price))
+                if((int.TryParse(TBPrice.Text, out Price)) && Price>0)
                 {
                     dataGridViewFl.Rows[SelectedRowIndex].SetValues(Id, Color, Size, Type, Country, Price);
                     dataGridViewFl.Rows[SelectedRowIndex].Cells[6].Value = RowState.Modified;
                 }
                 else
                 {
-                    MessageBox.Show("price not decimal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("price not integer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

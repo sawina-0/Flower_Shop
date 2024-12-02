@@ -370,7 +370,7 @@ namespace Flower_Shop
 
             if (TBIDAv.Text != string.Empty && TBAddr.Text != string.Empty && TBColor.Text != string.Empty && TBSize.Text != string.Empty && TBName.Text != string.Empty && TBSup.Text != string.Empty && TBCount.Text != string.Empty)
             {
-                if (int.TryParse(TBCount.Text, out Count))
+                if ((int.TryParse(TBCount.Text, out Count)) && Count > 0)
                 {
                     SqlCommand FindDouble = new SqlCommand("select ID_Shop, ID_Flower, Count from Available where ID_Shop = (select ID_Shop from Sale_Point where Shop_Address = '" + Addr + "') and ID_Flower = (select ID_Flower from Flowers where ID_Color = (select ID_Color from Flower_Color where Color = '" + Color + "') AND ID_Size = (select ID_Size from Blossom_Size where Size = '" + Size + "') AND ID_Type = (select ID_Type from Flower_Type where Flower_Name = '" + Type + "') AND ID_Supplier = (select ID_Supplier from Supplier where Company_Name = '" + Sup + "')) and Count = '" + Count + "'", dB.GetSqlConnection());
                     SqlDataReader DoubleReader = FindDouble.ExecuteReader();

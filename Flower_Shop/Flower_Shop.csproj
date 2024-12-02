@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDataAvailable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDataAvailable.Designer.cs">
+      <DependentUpon>AddDataAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDataColor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddDataAvailable.resx">
+      <DependentUpon>AddDataAvailable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDataColor.resx">
       <DependentUpon>AddDataColor.cs</DependentUpon>
     </EmbeddedResource>

@@ -170,7 +170,7 @@ namespace Flower_Shop
             int AddCount;
             if (TBAddAddr.Text != string.Empty && TBAddColor.Text != string.Empty && TBAddSize.Text != string.Empty && TBAddType.Text != string.Empty && TBAddSup.Text != string.Empty && TBAddCount.Text != string.Empty)
             {
-                if (int.TryParse(TBAddCount.Text, out AddCount))
+                if ((int.TryParse(TBAddCount.Text, out AddCount)) && AddCount > 0)
                 {
                     SqlCommand comm = new SqlCommand("select * from Sale_Point where Shop_Address ='" + TBAddAddr.Text + "'", dB.GetSqlConnection());
                     SqlDataReader AddressChecker = comm.ExecuteReader();

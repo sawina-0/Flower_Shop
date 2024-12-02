@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDataAvailable));
             this.label5 = new System.Windows.Forms.Label();
             this.TBAddColor = new System.Windows.Forms.TextBox();
             this.TBAddSize = new System.Windows.Forms.TextBox();
@@ -202,6 +203,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTSaveData);
             this.Controls.Add(this.TBAddType);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDataAvailable";
             this.Text = "AddDataAvailable";
             this.ResumeLayout(false);
