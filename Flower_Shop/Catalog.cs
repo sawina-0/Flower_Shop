@@ -221,9 +221,9 @@ namespace Flower_Shop
                 SearchString += (AddedCondition ? " AND " : "where ") + $"Flowers.ID_Size = (select Blossom_Size.ID_Size from Blossom_Size where Size = '{CBFilterSize.Text}')";
                 AddedCondition = true;
             }
-            if (!string.IsNullOrEmpty(CBFilterCountry.Text))//TROUBLE!!!!!!
+            if (!string.IsNullOrEmpty(CBFilterCountry.Text))
             {
-                SearchString += (AddedCondition ? " AND " : "where ") + $"Flowers.ID_Supplier = (select Supplier.ID_Supplier from Supplier where Country = '{CBFilterCountry.Text}')";
+                SearchString += (AddedCondition ? " AND " : "where ") + $"Flowers.ID_Supplier in (select Supplier.ID_Supplier from Supplier where Country = '{CBFilterCountry.Text}')";
                 AddedCondition = true;
             }
 
