@@ -58,7 +58,7 @@ namespace Flower_Shop
                             var AddQuery2 = $"insert into Role (Role_Name) values ('{AddRole}')";
                             var SqlCom = new SqlCommand(AddQuery2, dB.GetSqlConnection());
                             SqlCom.ExecuteNonQuery();
-                            var AddQuery3 = $"insert into System_Users(Login, Password, ID_Role) values ('{AddLog}','{AddPswd}',(select ID_Role from Role where Role_Name='{AddRole}')";
+                            var AddQuery3 = $"insert into System_Users(Login, Password, ID_Role) values ('{AddLog}','{AddPswd}',(select ID_Role from Role where Role_Name='{AddRole}'))";
                             var SqlCmd = new SqlCommand(AddQuery3, dB.GetSqlConnection());
                             SqlCmd.ExecuteNonQuery();
 
